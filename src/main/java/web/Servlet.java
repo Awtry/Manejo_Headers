@@ -6,7 +6,6 @@ import java.util.Enumeration;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-
 @WebServlet("/ServletH")
 public class Servlet extends HttpServlet {
 
@@ -14,7 +13,7 @@ public class Servlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
+
         String metodoHTTP = request.getMethod();
         String opcion = request.getParameter("opcion");
 
@@ -26,13 +25,17 @@ public class Servlet extends HttpServlet {
                 out.print("<script type='text/javascript' src='recursos/calculo.js'></script>");
                 out.print("</head>");
                 out.print("<body>");
-                out.print("<h1>Dame los valores: </h1>");
-                out.print("<form action='/Manejo_Headers/ServletHeader' method='post' onsubmit='return validarForma(this)'>");
-                out.print("<table width='200' id='enfasis-columnas'><tr><td class='columna'>Valor A: </td>");
-                out.print("<td><input type'text' name='val_1' value = 'primer valor' onfocus='this.select()'></td><tr>");
+                out.print("<h1>Formula general: </h1>");
+                out.print("<h4>Introduce los valores: </h4>");
+                out.print("<form action='/Manejo_Headers/ServletH' method='post' onsubmit='return validarForma(this)'>");
+                out.print("<table width='200' id='enfasis-columnas'><tr>");
+                out.print("<td class='columna'>Valor A: </td><td><input type'text' name='val_1' value ='val_1' onfocus='this.select()'></td><tr>");
                 out.print("<td class='columna'>Valor B: </td><td><input type='text' name='val_2' onfocus='this.select()'></td></tr><tr>");
                 out.print("<td class='columna'>Valor C:</td><td><input type='text' name='val_3' onfocus='this.select()'></td></tr><tr>");
-                out.print("<br>");
+                out.print("<td class='columna'>Resultado: </td><td><input type='text' name='txt_resultado' onfocus='this.select()'></td><tr>");
+                out.print("<tr style='text-align: center'><td><input type='submit' value='Vamonos' class='default'></td></tr>");
+
+                out.print("</table></form>");
 
                 out.print("</body>");
                 out.print("</html>");
@@ -42,25 +45,19 @@ public class Servlet extends HttpServlet {
             case "2":
                 out.print("<html>");
                 out.print("<head>");
-                out.print("<title>Headers HTTP</title>");
+                out.print("<title>Números primos</title>");
+                out.print("<script type='text/javascript' src='recursos/calculo.js'></script>");
                 out.print("</head>");
                 out.print("<body>");
-                out.print("<h1>Headers HTTP my darling</h1>");
-                out.print("<b>Método http: </b>" + metodoHTTP);
-                out.print("<br>");
-                String uri = request.getRequestURI();
-                out.print("<b>Uri solicitada: </b>" + uri);
+                out.print("<h1>Números primos: </h1>");
+                out.print("<h4>Dame el número: </h4>");
+                out.print("<form action='/Manejo_Headers/ServletH' method='post' onsubmit='return validarForma(this)'>");
+                out.print("<table width='200' id='enfasis-columnas'><tr><td class='columna'>Número: </td>");
+                out.print("<td><input type'text' name='val_1' value ='primNum' onfocus='this.select()'></td><tr>");
+                out.print("<td class='columna'>Resultado: </td><td><input type='text' name='txt_resultadoPRIM' onfocus='this.select()'></td><tr>");
+                out.print("<tr style='text-align: center'><td><input type='submit' value='Vamonos' class='default'></td></tr>");
 
-                //Headers disponibles
-                out.print("<br>");
-                Enumeration cabeceros = request.getHeaderNames();
-                while (cabeceros.hasMoreElements()) {
-                    String nombreCabecero = (String) cabeceros.nextElement();
-                    out.print("<b>" + nombreCabecero + "</b>");
-                    out.print(request.getHeader(nombreCabecero));
-                    out.print("<br>");
-                    out.print("<br>");
-                }
+                out.print("</table></form>");
 
                 out.print("</body>");
                 out.print("</html>");
@@ -70,26 +67,22 @@ public class Servlet extends HttpServlet {
             case "3":
                 out.print("<html>");
                 out.print("<head>");
-                out.print("<title>Headers HTTP</title>");
+                out.print("<title>Triángulo</title>");
+                out.print("<script type='text/javascript' src='recursos/calculo.js'></script>");
                 out.print("</head>");
                 out.print("<body>");
-                out.print("<h1>Headers HTTP my darling</h1>");
-                out.print("<b>Método http: </b>" + metodoHTTP);
-                out.print("<br>");
-                //String uri = request.getRequestURI();
-                //out.print("<b>Uri solicitada: </b>" + uri);
+                out.print("<h1>Tipo de triángulo</h1>");
+                out.print("<h4>Introduce los valores: </h4>");
+                out.print("<form action='/Manejo_Headers/ServletH' method='post' onsubmit='return validarForma(this)'>");
+                out.print("<table width='200' id='enfasis-columnas'><tr>");
+                out.print("<td class='columna'>Lado A: </td><td><input type'text' name='val_1' value ='val_1' onfocus='this.select()'></td><tr>");
+                out.print("<td class='columna'>Lado B: </td><td><input type='text' name='val_2' onfocus='this.select()'></td></tr><tr>");
+                out.print("<td class='columna'>Lado C:</td><td><input type='text' name='val_3' onfocus='this.select()'></td></tr><tr>");
+                out.print("<td class='columna'>Resultado: </td><td><input type='text' name='txt_resultado' onfocus='this.select()'></td><tr>");
+                out.print("<tr style='text-align: center'><td><input type='submit' value='Vamonos' class='default'></td></tr>");
 
-                //Headers disponibles
-                out.print("<br>");
-                // Enumeration cabeceros = request.getHeaderNames();
-                /*  while (cabeceros.hasMoreElements()) {
-                    String nombreCabecero = (String) cabeceros.nextElement();
-                    out.print("<b>" + nombreCabecero + "</b>");
-                    out.print(request.getHeader(nombreCabecero));
-                    out.print("<br>");
-                    out.print("<br>");
-                }
-                 */
+                out.print("</table></form>");
+
                 out.print("</body>");
                 out.print("</html>");
                 out.close();
@@ -98,14 +91,22 @@ public class Servlet extends HttpServlet {
             default:
                 out.print("<html>");
                 out.print("<head>");
-                out.print("<title>Headers HTTP</title>");
+                out.print("<title>Formula general</title>");
+                out.print("<script type='text/javascript' src='recursos/calculo.js'></script>");
                 out.print("</head>");
                 out.print("<body>");
-                out.print("<h1>BATEADO</h1>");
-                out.print("<h1>Headers HTTP my darling</h1>");
-                out.print("<b>Método http: </b>" + metodoHTTP);
-                out.print("<br>");
-              
+                out.print("<h1>Formula general: </h1>");
+                out.print("<h4>Introduce los valores: </h4>");
+                out.print("<form action='/Manejo_Headers/ServletH' method='post' onsubmit='return validarForma(this)'>");
+                out.print("<table width='200' id='enfasis-columnas'><tr><td class='columna'>Valor A: </td>");
+                out.print("<td><input type'text' name='val_1' value = 'primer valor' onfocus='this.select()'></td><tr>");
+                out.print("<td class='columna'>Valor B: </td><td><input type='text' name='val_2' onfocus='this.select()'></td></tr><tr>");
+                out.print("<td class='columna'>Valor C:</td><td><input type='text' name='val_3' onfocus='this.select()'></td></tr><tr>");
+                out.print("<td class='columna'>Resultado: </td><td><input type='text' name='txt_resultado' onfocus='this.select()'></td><tr>");
+                out.print("<tr style='text-align: center'><td><input type='submit' value='Vamonos' class='default'></td></tr>");
+
+                out.print("</table></form>");
+
                 out.print("</body>");
                 out.print("</html>");
                 out.close();
