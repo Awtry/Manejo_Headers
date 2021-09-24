@@ -1,10 +1,10 @@
 function Rutas(forma){
   
     
-    var opcion = forma.opcion;
+    var op = forma.opcion;
     var radSeleccionado = false; 
-     for (var i = 0; i < opcion.length ; i++){
-        if(opcion[i].checked){
+     for (var i = 0; i < op.length ; i++){
+        if(op[i].checked){
             radSeleccionado = true; 
         }
     }
