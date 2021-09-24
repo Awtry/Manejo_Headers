@@ -8,6 +8,10 @@ function Rutas(forma){
             radSeleccionado = true; 
         }
     }
+    if(!radSeleccionado){
+        alert("Selecciona por lo menos un genero");
+        return false; 
+    }
     
     alert("Formulario valido, enviando a servidor");
     return true; 
