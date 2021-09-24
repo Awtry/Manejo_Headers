@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo cabeceros</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="recursos/calculos.js"></script>
+    </head>
+    <body>
+        <h1>Ejemplo headers my dear</h1>
+        <a href="/Manejo_Headers/ServletHeader">Link a servlet header</a>
+
+        <h4>Calculos</h4>
+       <form action="/Manejo_Headers/Servlet" method="post" onsubmit="return Rutas(this)">
+           <table width="200" id="enfasis-columnas">
+           <tr>
+                    <td>
+                        Formula general: <input type="radio" name="opcion" value="1" ><!-- comment -->
+                        <br>
+                        Número primo:<input type="radio" name="opcion" value="2" ><!-- comment -->
+                        <br>
+                        Triángulo: <input type="radio" name="opcion" value="3" >
+                        <br>
+                    </td>
+                </tr>
+           <tr style="text-align: center">
+                    <td>
+                        <input type="submit" value="Vamonos" class="default"> 
+                    </td>
+                </tr>
+           </table>
+
+        </form>
+ 
+        
+        <form action="/Manejo_Headers/ServletHeader" method="post" onsubmit="return validarForma(this)">
+            <table width="200" id="enfasis-columnas"><tr><td class="columna">Valor A: </td>
+                    <td><input class="default" type="text" name="val_1" value = "primer valor" onfocus="this.select()"></td><tr>
+                    <td class="columna">
+                        Valor B: 
+                    </td>
+                    <td>
+                        <input class="default" type="text" name="val_2" onfocus="this.select()">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="columna">
+                        Valor C: 
+                    </td>
+                    <td>
+                        <input class="default" type="text" name="val_3" onfocus="this.select()">
+                    </td>    
+                </tr>
+
+                <tr>
+                    <td class="columna">
+                        Número primo: 
+                    </td>
+                    <td>
+                        <input class="default" type="text" name="val_prim" onfocus="this.select()">
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td class="columna">
+                        Tipo Triángulo: 
+                    </td>
+                    <td class="columna">
+                        Valor A: 
+                    </td>
+                    <td>
+                        <input class="default" type="text" name="val_tri_1" value = "primer valor" onfocus="this.select()">
+                    </td>
+                    <td class="columna">
+                        Valor B: 
+                    </td>
+                    <td>
+                        <input class="default" type="text" name="val_tri_2" value = "segundo valor" onfocus="this.select()">
+                    </td>
+                    <td class="columna">
+                        Valor C: 
+                    </td>
+                    <td>
+                        <input class="default" type="text" name="val_tri_3" value = "tercer valor" onfocus="this.select()">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </body>
+</html>
