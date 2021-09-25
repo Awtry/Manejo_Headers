@@ -16,6 +16,7 @@ public class Servlet extends HttpServlet {
 
         String metodoHTTP = request.getMethod();
         String opcion = request.getParameter("opcion");
+        String resFormula = request.getParameter("res");
 
         switch (opcion) {
             case "1":
@@ -27,13 +28,13 @@ public class Servlet extends HttpServlet {
                 out.print("<body>");
                 out.print("<h1>Formula general: </h1>");
                 out.print("<h4>Introduce los valores: </h4>");
-                out.print("<form action='/Manejo_Headers/ServletH' method='post' onsubmit='return validarForma(this)'>");
+                out.print("<form  method='post' '>");
                 out.print("<table width='200' id='enfasis-columnas'><tr>");
-                out.print("<td class='columna'>Valor A: </td><td><input type'text' name='val_1' value ='val_1' onfocus='this.select()'></td><tr>");
+                out.print("<td class='columna'>Valor A: </td><td><input type'text' name='val_1' onfocus='this.select()'></td><tr>");
                 out.print("<td class='columna'>Valor B: </td><td><input type='text' name='val_2' onfocus='this.select()'></td></tr><tr>");
                 out.print("<td class='columna'>Valor C:</td><td><input type='text' name='val_3' onfocus='this.select()'></td></tr><tr>");
-                out.print("<td class='columna'>Resultado: </td><td><input type='text' name='txt_resultado' onfocus='this.select()'></td><tr>");
-                out.print("<tr style='text-align: center'><td><input type='submit' value='Vamonos' class='default'></td></tr>");
+                out.print("<td class='columna'>Resultado: </td><td><input type='text' name='resForm' value = "+ resFormula +" onfocus='this.select()'></td><tr>");
+                out.print("<tr style='text-align: center'><td><button onClick='Formula()' value='Calcula' class='default'>Maiu </button></td></tr>");
 
                 out.print("</table></form>");
 
