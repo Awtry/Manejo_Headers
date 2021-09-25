@@ -22,6 +22,7 @@ function calcularGeneral()
     var a = parseInt(document.getElementById("val_1").value);
     var b = parseInt(document.getElementById("val_2").value);
     var c = parseInt(document.getElementById("val_3").value);
+    var opcion = 1;
     
     var res1 = document.getElementById("res1");
     var res2 = document.getElementById("res2");
@@ -48,6 +49,7 @@ function calcularGeneral()
     
     alert("Primera solución: " + parseFloat(solucion1));
     alert("Segunda solución: " + parseFloat(solucion2));
+    return res1,res2,a,b,c,opcion;
     
 }
 
