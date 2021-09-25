@@ -85,10 +85,7 @@ function Triangulo() {
 
 }
 
-function otroPrimo() {
-
-}
-
+/*
 function primito(num) {
 
     if (num == 0 || num == 1)
@@ -173,7 +170,7 @@ function miPrimo() {
      
      alert("No me abre el alert");
      return esOno;
-     */
+     *
 
 }
 
@@ -196,3 +193,37 @@ if (saberPrimo) {
 {
     alert("No es primo");
 }
+
+*/
+
+function miPrimo() {
+
+    alert("Entro a la funci´ón ");
+    var cantidadNum = parseInt(document.getElementById("cantidadNum").value);
+    var conta = 0;
+    var j = 2;
+    var numerosPrimos = [];
+
+    while (conta < cantidadNum) {
+        if (primo(j)) {
+            numerosPrimos.push(j);
+            conta++;
+        }
+        j++;
+        
+    }
+    alert(numerosPrimos);
+
+}
+
+ function primo(numero) {
+        if (numero !== 1 && numero !== 0) {
+            for (var i = 2; i < numero; i++) {
+                if (numero % i === 0) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
